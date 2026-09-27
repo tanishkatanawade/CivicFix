@@ -16,11 +16,9 @@ export function Header({ type = 'citizen' }: HeaderProps) {
   ];
 
   const adminNav = [
-    { to: '/admin', label: 'Overview', end: true },
-    { to: '/admin/issues', label: 'Issue Explorer' },
-    { to: '/admin/map', label: 'Map View' },
-    { to: '/admin/works', label: 'Public Works' },
-    { to: '/admin/verification', label: 'Verification' },
+    { to: '/admin', label: 'Ward Officer', end: true },
+    { to: '/admin/dispatch', label: 'Field Dispatch' },
+    { to: '/admin/review', label: 'Reviewer / Vigilance' },
   ];
 
   const navItems = type === 'citizen' ? citizenNav : adminNav;

@@ -6,12 +6,9 @@ import { ReportIssue } from "./citizen/pages/ReportIssue";
 import { PublicIssues } from "./citizen/pages/PublicIssues";
 import { PublicIssueDetail } from "./citizen/pages/PublicIssueDetail";
 import { AdminLayout } from "./admin/AdminLayout";
-import { Overview } from "./admin/pages/Overview";
-import { IssueExplorer } from "./admin/pages/IssueExplorer";
-import { IssueDetail } from "./admin/pages/IssueDetail";
-import { MapView } from "./admin/pages/MapView";
-import { PublicWorks } from "./admin/pages/PublicWorks";
-import { Verification } from "./admin/pages/Verification";
+import { WardOfficerDashboard } from "./admin/pages/WardOfficerDashboard";
+import { FieldDispatch } from "./admin/pages/FieldDispatch";
+import { ReviewerConsole } from "./admin/pages/ReviewerConsole";
 
 export default function App() {
   return (
@@ -28,15 +25,14 @@ export default function App() {
           <Route path="issues/:issueId" element={<PublicIssueDetail />} />
         </Route>
 
-        {/* Administrator console: prototype area, structured so real
+        {/* WardSentry administrator portal: three consoles, one per role in
+            the civic pipeline. Prototype area, structured so real
             auth/authorization can be added at this boundary later. */}
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Overview />} />
-          <Route path="issues" element={<IssueExplorer />} />
-          <Route path="issues/:issueId" element={<IssueDetail />} />
-          <Route path="map" element={<MapView />} />
-          <Route path="works" element={<PublicWorks />} />
-          <Route path="verification" element={<Verification />} />
+          <Route index element={<WardOfficerDashboard />} />
+          <Route path="dispatch" element={<FieldDispatch />} />
+          <Route path="review" element={<ReviewerConsole />} />
+          <Route path="*" element={<Navigate to="/admin" replace />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/citizen" replace />} />
