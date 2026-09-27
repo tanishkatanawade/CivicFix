@@ -61,27 +61,17 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/admin" className="text-secondary hover:text-foreground transition-colors">
-                  Spatial Overview
+                  Ward Officer Dashboard
                 </Link>
               </li>
               <li>
-                <Link to="/admin/issues" className="text-secondary hover:text-foreground transition-colors">
-                  Issue Explorer
+                <Link to="/admin/dispatch" className="text-secondary hover:text-foreground transition-colors">
+                  Field Dispatch &amp; Verification
                 </Link>
               </li>
               <li>
-                <Link to="/admin/map" className="text-secondary hover:text-foreground transition-colors">
-                  Spatial Evidence Map
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/works" className="text-secondary hover:text-foreground transition-colors">
-                  MPLADS Public Works
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/verification" className="text-secondary hover:text-foreground transition-colors">
-                  Verification Signals
+                <Link to="/admin/review" className="text-secondary hover:text-foreground transition-colors">
+                  Reviewer / Vigilance Console
                 </Link>
               </li>
             </ul>
